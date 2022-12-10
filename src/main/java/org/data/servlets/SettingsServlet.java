@@ -12,7 +12,9 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.UUID;
 
 @WebServlet( "/settings" )
@@ -106,12 +108,12 @@ public class SettingsServlet extends HttpServlet {
                 }
 
                 //??????
-//                savedName = UUID.randomUUID() + extension ;
+               savedName = UUID.randomUUID() + extension ;
 //                // сохраняем
-//                // String path = new File( "./" ).getAbsolutePath() ;  // запрос текущей директории - C:\xampp\tomcat\bin\.
-//                String path = req.getServletContext().getRealPath( "/" ) ;  // ....\target\WebBasics\
-//                File file = new File( path + "../upload/" + savedName ) ;
-//                Files.copy( userAvatar.getInputStream(), file.toPath() ) ;
+                // String path = new File( "./" ).getAbsolutePath() ;  // запрос текущей директории - C:\xampp\tomcat\bin\.
+                String path = req.getServletContext().getRealPath( "/" ) ;  // ....\target\WebBasics\
+                File file = new File( path + "../upload/" + savedName ) ;
+                Files.copy( userAvatar.getInputStream(), file.toPath() ) ;
             }
             // endregion
 

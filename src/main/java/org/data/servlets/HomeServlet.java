@@ -42,6 +42,9 @@ public class HomeServlet extends HttpServlet {
         List<Goods> listbyuser = new LinkedList<Goods>();
         listbyuser= goodsDAO.getAllGoodsByUser(login);
         req.setAttribute("listbyuser",listbyuser);
+        List<Goods> listall = new LinkedList<Goods>();
+        listall= goodsDAO.getAllGoods();
+        req.setAttribute("listall",listall);
         req.getRequestDispatcher( "WEB-INF/index.jsp" ).forward( req, resp ) ;
 
     }

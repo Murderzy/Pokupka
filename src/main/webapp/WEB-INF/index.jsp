@@ -1,6 +1,7 @@
 <%@ page import="org.data.entities.Goods" %>
 <%@ page import="java.util.List" %>
 <%@ page import="org.data.entities.User" %>
+<%@ page import="org.data.dao.GoodsDAO" %>
 <jsp:include page="/WEB-INF/headerfragment.jsp" />
 
 <%@ page contentType="text/html;charset=UTF-8" %><%
@@ -8,7 +9,27 @@
     User u = (User)request.getSession().getAttribute("ImageUser");
     String home = request.getContextPath() ;
     List<Goods> listbyuser = (List<Goods>) request.getAttribute("listbyuser");
+
+    List<Goods> listall = (List<Goods>) request.getAttribute("listall"); ;
 %>
+
+
+<h2>List ALL</h2>
+
+<%
+    for(Goods g: listall){%>
+
+<ul>
+    <li><%=g.getTitle()%>   <%=g.getDescription()%>   <%=g.getPrice()%> <%=g.getUser_id()%>
+
+        <img src="<%=home%>/image/<%=g.getImage()%>" />
+    </li>
+
+</ul>
+
+<%  } %>
+
+
 
 <h1>Main</h1>
 <% if(userLogin == null) {%>
@@ -21,7 +42,7 @@
 </form>
 <% }else{ %>
 <div>Login</div>
-<img src="<%=request.getContextPath()%>/upload/<%=u.getAvatar()%>" />
+<img src="<%=home%>/image/<%=u.getAvatar()%>" />
 <h1>Hello <%=userLogin%></h1>
 <form method="get" action="<%=home%>/logout">
     <input type="submit" value="logout"/>
@@ -35,7 +56,7 @@
         <button type="submit">Add</button>
     </form>
 </div>
-<h2>List</h2>
+<h2>List USERS </h2>
 <form method="get" action="<%=home%>/edit">
     <button type="submit">Edit</button>
 </form>

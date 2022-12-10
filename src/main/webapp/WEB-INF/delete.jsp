@@ -20,4 +20,10 @@
     <input type="submit" value="Delete"/>
 </form>
 
+
+<form method="get" action="<%=home%>/">
+
+    <input type="submit" value="Go Home"/>
+</form>
+
 <%  } %>

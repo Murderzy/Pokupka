@@ -20,4 +20,10 @@
     <input type="submit" value="Edit"/>
 </form>
 
+
+<form method="get" action="<%=home%>/">
+
+    <input type="submit" value="Go Home"/>
+</form>
+
 <%  } %>

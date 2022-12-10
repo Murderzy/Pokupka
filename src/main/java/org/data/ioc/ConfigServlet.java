@@ -25,6 +25,6 @@ public class ConfigServlet extends ServletModule {
         serve( "/" ).with( HomeServlet.class ) ;
         serve( "/log" ).with( LoginServlet.class ) ;
         serve("/logout").with(LogoutServlet.class);
-        //serve("/sha1hash").with(SHA1Servlet.class);
+        serve( "/image/*" ).with( DownloadServlet.class ) ;
     }
 }
