@@ -141,11 +141,15 @@ public class RegServlet extends HttpServlet {
         // Проверяем успешность валидации
         if( errorMessage != null ) {  // Есть ошибки
             session.setAttribute( "regError", errorMessage ) ;
+            resp.sendRedirect( req.getRequestURI() ) ;
         }
         else {
             session.setAttribute( "regOk", "Registration successful" ) ;
+            session.removeAttribute("regOk");
+            session.removeAttribute("regError");
+            resp.sendRedirect("http://localhost:8080/Pokupka_war_exploded/log");
         }
 
-        resp.sendRedirect("http://localhost:8080/Pokupka_war_exploded/log");
+        //resp.sendRedirect("http://localhost:8080/Pokupka_war_exploded/log");
     }
 }

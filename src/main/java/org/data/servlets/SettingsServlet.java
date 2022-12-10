@@ -138,12 +138,14 @@ public class SettingsServlet extends HttpServlet {
         // Проверяем успешность валидации
         if( errorMessage != null ) {  // Есть ошибки
             session.setAttribute( "regError", errorMessage ) ;
+            resp.sendRedirect( req.getRequestURI() );
         }
         else {
             session.setAttribute( "regOk", "Update successful" ) ;
+            resp.sendRedirect("http://localhost:8080/Pokupka_war_exploded/");
         }
 
-        resp.sendRedirect("http://localhost:8080/Pokupka_war_exploded/");
+        //resp.sendRedirect("http://localhost:8080/Pokupka_war_exploded/");
 
     }
 }

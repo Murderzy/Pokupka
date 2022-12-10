@@ -106,6 +106,7 @@ public class UserDAO {
     }
 
     public String add( User user ) {
+        System.out.println("Add User");
         // генерируем id для новой записи
         String id = UUID.randomUUID().toString() ;
         // генерируем соль

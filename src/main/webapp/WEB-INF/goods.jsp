@@ -10,7 +10,7 @@
 %>
 
 <div class="container"><div class="row justify-content-center"><div class="col-md-5"><div class="card">
-  <h2 class="card-title text-center">Register</h2>
+  <h2 class="card-title text-center">Add</h2>
   <% if( regError != null ) { %><h3 class="card-title text-center reg-error"><%=regError%></h3><% } %>
   <% if( regOk != null ) { %><h3 class="card-title text-center reg-ok"><%=regOk%></h3><% } %>
   <div class="card-body py-md-4">

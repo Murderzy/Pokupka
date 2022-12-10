@@ -116,15 +116,16 @@ public class EditOneServlet extends HttpServlet {
         // Проверяем успешность валидации
         if( errorMessage != null ) {  // Есть ошибки
             session.setAttribute( "regErr", errorMessage ) ;
-
+            resp.sendRedirect( req.getRequestURI() );
         }
         else {
             session.setAttribute( "reg", "Registration successful" ) ;
+            resp.sendRedirect("http://localhost:8080/Pokupka_war_exploded/edit");
         }
 
         //resp.sendRedirect("http://localhost:8080/Pokupka_war_exploded/");
 
-        resp.sendRedirect("http://localhost:8080/Pokupka_war_exploded/edit");
+        //resp.sendRedirect("http://localhost:8080/Pokupka_war_exploded/edit");
 
     }
 }

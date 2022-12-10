@@ -8,9 +8,9 @@
     String userLogin = (String)request.getSession().getAttribute("login");
     User u = (User)request.getSession().getAttribute("ImageUser");
     String home = request.getContextPath() ;
-    List<Goods> listbyuser = (List<Goods>) request.getAttribute("listbyuser");
+    List<Goods> listbyuser = (List<Goods>) request.getSession().getAttribute("listbyuser");
 
-    List<Goods> listall = (List<Goods>) request.getAttribute("listall"); ;
+    List<Goods> listall = (List<Goods>) request.getSession().getAttribute("listall"); ;
 %>
 
 

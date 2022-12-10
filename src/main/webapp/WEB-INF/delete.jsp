@@ -21,9 +21,10 @@
 </form>
 
 
+
+<%  } %>
+
 <form method="get" action="<%=home%>/">
 
     <input type="submit" value="Go Home"/>
 </form>
-
-<%  } %>
